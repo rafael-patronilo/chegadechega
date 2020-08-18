@@ -1,0 +1,362 @@
+
+:root{
+	--fasc:#81a1c1;
+	--lgbt:#b48ead;
+	--edu:#ebcb8b;
+	--fam:#a3be8c;
+
+	--fasc2:#7490ad;
+	--lgbt2:#a27f9b;
+	--edu2:#d3b67d;
+	--fam2:#92ab7e;
+
+	--page-background: #f2f4f8;
+	--base-text: #4C566A;
+	--card-background: #fff;
+	--h1-text: #000;
+	--shadow:rgba(184, 194, 215, 0.25) 0px 4px 6px, rgba(184, 194, 215, 0.1) 0px 5px 7px;
+	--shadow-r: 184;
+	--shadow-g: 194;
+	--shadow-b: 215;
+	--jumper-bg: #D8DEE9;
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+		--page-background:#242933;
+		--card-background: #2E3440;
+		--base-text: #ECEFF4;
+		--h1-text: var(--base-text);
+		--shadow: rgba(15, 17, 21, 0.25) 0px 4px 6px, rgba(15, 17, 21, 0.1) 0px 5px 7px;
+		--shadow-r: 15;
+		--shadow-g: 17;
+		--shadow-b: 21;
+		--jumper-bg: #434C5E;
+    }
+}
+
+main{
+	width:100%;
+	align-content:center;
+}
+/* ::-webkit-scrollbar{ */
+/* 	width:0; */
+/* } */
+body{
+	background: var(--page-background);
+	/* overflow: -moz-scrollbars-none; */
+	/* -ms-overflow-style: none; */
+}
+
+p{
+	line-height: 1.5;
+	font-size: 1rem;
+	color: var(--base-text);
+}
+
+#content>.programa>p{
+	position:relative;
+}
+
+h1,h2{
+	font-family: "mononoki";
+}
+
+h1{
+	font-size: 2.72143em;
+	font-weight: 500;
+	color: var(--h1-text);
+}
+
+h2{
+	color: var(--base-text);
+}
+
+.card{
+	box-shadow: var(--shadow);
+	border-radius:8px;
+	margin: auto;
+}
+
+.programa{
+	background: var(--card-background);
+	max-width: 95%;
+	padding: 2em 6%;
+}
+
+#jump-container{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+}
+
+#options{
+	background: var(--jumper-bg);
+	max-width: 40em;
+	width: 100%;
+	border-radius: 10px 10px 0px 0px;
+}
+
+#options>.optmenu{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.option{
+	border-radius:8px;
+	padding:calc(0.5em - 3px);
+	margin: 0.5rem auto;
+	font-family: "mononoki";
+	font-weight: 1000;
+	box-shadow: var(--shadow);
+	cursor:pointer;
+	transition: all 0.25s;
+	user-select:none;
+}
+.option:hover{
+	filter:brightness(95%);
+	box-shadow: rgba(var(--shadow-r), var(--shadow-g), var(--shadow-b), 1) 0px 4px 6px, rgba(var(--shadow-r), var(--shadow-g), var(--shadow-b), 0.5) 0px 5px 7px;
+}
+.option:active{
+	filter:brightness(95%);
+	box-shadow: rgba(var(--shadow-r), var(--shadow-g), var(--shadow-b), 0.1) 0px 4px 6px, rgba(var(--shadow-r), var(--shadow-g), var(--shadow-b), 0.05) 0px 5px 7px;
+}
+
+.optmenu>.fasc{
+	border: var(--fasc) 3px solid;
+}
+
+.optmenu>.lgbt{
+	border: var(--lgbt) 3px solid;
+}
+
+.optmenu>.edu{
+	border: var(--edu) 3px solid;
+}
+
+.optmenu>.fam{
+	border: var(--fam) 3px solid;
+}
+.fasc,
+.lgbt,
+.edu,
+.fam{
+	color:var(--base-text);
+}
+
+
+.fasc.hilight{
+	background:var(--fasc);
+	color:#fff;
+}
+
+.lgbt.hilight{
+	background:var(--lgbt);
+	color:#fff;
+}
+
+.edu.hilight{
+	background:var(--edu);
+	color:#fff;
+}
+
+.fam.hilight{
+	background:var(--fam);
+	color:#fff;
+}
+
+
+.scrollbar .fasc.hilight:hover,
+.fasc.hilight[data-tooltip]:hover,
+.fasc.active{
+	background:var(--fasc2);
+	cursor:pointer;
+}
+
+.scrollbar .lgbt.hilight:hover,
+.lgbt.hilight[data-tooltip]:hover,
+.lgbt.active{
+	background:var(--lgbt2);
+	cursor:pointer;
+}
+
+.scrollbar .edu.hilight:hover,
+.edu.hilight[data-tooltip]:hover,
+.edu.active{
+	background:var(--edu2);
+	cursor:pointer;
+}
+
+.scrollbar .fam.hilight:hover,
+.fam.hilight[data-tooltip]:hover,
+.fam.active{
+	background:var(--fam2);
+	cursor:pointer;
+}
+
+
+.quote{
+	display: inline-block;
+}
+
+#programa>p>span.hilight {
+	transition: 0.25s all;
+}
+#programa>p>span.hilight:hover {
+	z-index:5;
+	/* filter:brightness(80%); */
+}
+
+
+.header{
+	max-width:90%;
+	margin: 0px auto 2em;
+	text-align: center;
+}
+
+.content{
+	max-width: 75em;
+	width:98%;
+	margin:auto;
+}
+
+.note{
+	color: #8fbcbb;
+}
+
+#scrollbar{
+	position: fixed;
+	/* background: var(--base-text); */
+	/* opacity: 0.05; */
+	height: 100vh;
+	width: 1.5rem;
+	right: 0rem;
+	top: 0;
+	z-index: 100;
+	/* border-radius: 5px; */
+}
+
+/* snackbar */
+#snackbar {
+	visibility: hidden;
+	background-color: var(--jumper-bg);
+	color: var(--base-text);
+	text-align: center;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	position: fixed;
+	margin: auto;
+	z-index: 100;
+	bottom: 60px;
+	font-family: "mononoki";
+	left: 50%;
+	transform: translate(-50%, 0);
+	user-select:none;
+}
+
+#snackbar.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 60px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 60px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 60px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+/* tooltips */
+
+/* [data-tooltip] { */
+/*   display: inline-block; */
+/*   position: relative; */
+/*   cursor: help; */
+/*   padding: 4px; */
+/* } */
+
+/* Tooltip styling */
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  display: none;
+  position: absolute;
+  background: var(--jumper-bg);
+  box-shadow: var(--shadow);
+  color: var(--base-text);
+  padding: 1rem 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  min-width: 100px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Dynamic horizontal centering */
+[data-tooltip]:before {
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+
+[data-tooltip]:before {
+  top: 100%;
+  margin-top: 6px;
+}
+
+
+/* Tooltip arrow styling/placement */
+[data-tooltip]:after {
+  content: '';
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+/* Dynamic horizontal centering for the tooltip */
+[data-tooltip]:after {
+  left: 50%;
+  margin-left: -6px;
+}
+
+[data-tooltip]:after {
+  top: 100%;
+  border-width: 0 6px 6px;
+  border-bottom-color: var(--jumper-bg);
+}
+
+/* Show the tooltip when hovering */
+.active[data-tooltip]:before,
+.active[data-tooltip]:after {
+  display: block;
+  z-index:5;
+}
+
+
+#socials>a>img{
+	padding: 0 1rem;
+}
